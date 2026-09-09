@@ -21,10 +21,10 @@ const el = {
   rightHdg: document.getElementById("rightHdg"),
   rightCard: document.getElementById("rightCard"),
   recipHdg: document.getElementById("recipHdg"),
-  recipCard: document.getElementById("recipCard"),
-  lookup: document.getElementById("lookup")
+  recipCard: document.getElementById("recipCard")
 };
 const state = { hdg: "", rng: "", alt: "", active: "hdg", replace: true };
+function rows() { return document.querySelectorAll("#lookup .row, #extras .row"); }
 function bandFor(alt) {
   if (alt <= 19) return "0-19";
   if (alt <= 29) return "20-29";
@@ -68,7 +68,7 @@ function clearResults() {
   el.recipCard.textContent = "--";
   document.getElementById("grpNOR").classList.remove("on");
   document.getElementById("grpRNAR").classList.remove("on");
-  el.lookup.querySelectorAll(".row").forEach(row => {
+  rows().forEach(row => {
     row.classList.remove("bold");
     row.querySelector(".val").textContent = "--";
   });
@@ -98,9 +98,9 @@ function compute(fromEnter) {
   el.recipCard.textContent = cardinal(recip);
   document.getElementById("grpNOR").classList.toggle("on", far);
   document.getElementById("grpRNAR").classList.toggle("on", !far);
-  el.lookup.querySelectorAll(".row").forEach(row => {
+  rows().forEach(row => {
     const k = row.getAttribute("data-k");
-    row.querySelector(".val").textContent = String(vals[k]).padStart(2, "0");
+    row.querySelector(".val").textContent = String(vals[k]);
     row.classList.toggle("bold", boldSet.has(k));
   });
   el.results.classList.remove("flash");
