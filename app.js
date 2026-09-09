@@ -75,7 +75,7 @@ function clearResults() {
 }
 function compute(fromEnter) {
   if (fromEnter && state.hdg.length === 3 && Number(state.hdg) <= 360) {
-    if (state.rng.length === 0) state.rng = "25";
+    if (state.rng.length !== 2) state.rng = "25";
     if (state.alt.length === 0) state.alt = "25";
     renderBoxes();
   }
