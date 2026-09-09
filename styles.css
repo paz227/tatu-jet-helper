@@ -25,12 +25,12 @@ html, body {
 body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
 .app {
   height: 100%; display: grid; grid-template-columns: 1fr;
-  grid-template-rows: minmax(0, 1fr) auto auto; gap: 6px; padding: 6px;
+  grid-template-rows: minmax(0, 1fr) auto auto auto; gap: 6px; padding: 6px;
   max-width: 1400px; margin: 0 auto;
 }
 .results {
   display: grid; grid-template-columns: 1fr 1fr;
-  grid-template-rows: minmax(0, 1.1fr) auto minmax(0, 1.3fr);
+  grid-template-rows: minmax(0, 1.1fr) auto minmax(0, 1.2fr);
   gap: 6px; min-height: 0;
 }
 .results.flash .card { box-shadow: 0 0 0 2px var(--amber); }
@@ -51,7 +51,8 @@ body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-are
 .card.recip .hdg { font-size: clamp(26px, 6vw, 48px); }
 .cardinal { margin-top: 2px; font-size: clamp(16px, 4vw, 36px); font-weight: 800; letter-spacing: 0.06em; color: var(--green); }
 .card.recip .cardinal { font-size: clamp(14px, 3vw, 22px); }
-.lookup { width: 100%; height: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; gap: 6px; }
+.lookup { width: 100%; height: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.extras { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .grp { display: flex; flex-direction: column; gap: 4px; padding: 4px; border-radius: 8px; border: 2px solid transparent; min-height: 0; }
 .grp.on { border-color: var(--amber); background: rgba(255, 204, 51, 0.06); }
 .row { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border-radius: 6px; background: #0e121a; border: 1px solid #2a3144; font-variant-numeric: tabular-nums; min-height: 0; }
@@ -78,10 +79,11 @@ body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-are
 @media (min-height: 800px) { .pad { height: 220px; } }
 @media (min-height: 1000px) { .pad { height: 280px; } }
 @media (orientation: landscape) {
-  .app { grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.75fr); grid-template-rows: minmax(0, 1fr) auto; }
-  .results { grid-column: 1; grid-row: 1 / 3; }
-  .entry { grid-column: 2; grid-row: 1; align-self: end; }
-  .ufc { grid-column: 2; grid-row: 2; }
+  .app { grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.75fr); grid-template-rows: auto minmax(0, 1fr) auto auto; }
+  .results { grid-column: 1; grid-row: 1 / 5; }
+  .extras { grid-column: 2; grid-row: 1; }
+  .entry { grid-column: 2; grid-row: 3; align-self: end; }
+  .ufc { grid-column: 2; grid-row: 4; }
   .pad { height: min(42vh, 260px); }
 }
 @media (orientation: landscape) and (max-height: 500px) {
