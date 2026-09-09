@@ -7,13 +7,74 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="TATU Jet" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="format-detection" content="telephone=no" />
   <title>TATU Jet Helper v0.3</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<p>Loading helper… open this file from the repo raw copy if you still see this.</p>
-<script>
-window.location.replace('tatu_jet_helper_v0.3.html');
-</script>
+<div class="app">
+    <section class="results empty" id="results">
+      <div class="card left">
+        <div class="tag">−90°</div>
+        <div class="hdg" id="leftHdg">---</div>
+        <div class="cardinal" id="leftCard">--</div>
+      </div>
+      <div class="card right">
+        <div class="tag">+90°</div>
+        <div class="hdg" id="rightHdg">---</div>
+        <div class="cardinal" id="rightCard">--</div>
+      </div>
+      <div class="card recip">
+        <div class="tag">180°</div>
+        <div class="hdg" id="recipHdg">---</div>
+        <div class="cardinal" id="recipCard">--</div>
+      </div>
+      <div class="card mid">
+        <div class="lookup" id="lookup">
+          <div class="row" data-k="AR6"><span class="rlab">AR+6</span><span class="val">--</span></div>
+          <div class="row" data-k="SW"><span class="rlab">SW</span><span class="val">--</span></div>
+          <div class="grp" id="grpNOR">
+            <div class="row" data-k="N"><span class="rlab">N</span><span class="val">--</span></div>
+            <div class="row" data-k="OR"><span class="rlab">OR</span><span class="val">--</span></div>
+          </div>
+          <div class="grp" id="grpRNAR">
+            <div class="row" data-k="RN"><span class="rlab">RN</span><span class="val">--</span></div>
+            <div class="row" data-k="AR"><span class="rlab">AR</span><span class="val">--</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="entry">
+      <div class="field">
+        <div class="lab">BEARING</div>
+        <div class="box active replace" id="inHdg" data-field="hdg"><span class="ph">---</span></div>
+      </div>
+      <div class="field">
+        <div class="lab">RANGE</div>
+        <div class="box" id="inRng" data-field="rng"><span class="ph">--</span></div>
+      </div>
+      <div class="field">
+        <div class="lab">ALT ×1000</div>
+        <div class="box" id="inAlt" data-field="alt"><span class="ph">--</span></div>
+      </div>
+      <div class="err" id="err"></div>
+    </section>
+    <div class="ufc">
+      <section class="pad" id="pad">
+        <div class="well"><button type="button" data-k="1">1</button></div>
+        <div class="well"><button type="button" data-k="2">2</button></div>
+        <div class="well"><button type="button" data-k="3">3</button></div>
+        <div class="well"><button type="button" data-k="4">4</button></div>
+        <div class="well"><button type="button" data-k="5">5</button></div>
+        <div class="well"><button type="button" data-k="6">6</button></div>
+        <div class="well"><button type="button" data-k="7">7</button></div>
+        <div class="well"><button type="button" data-k="8">8</button></div>
+        <div class="well"><button type="button" data-k="9">9</button></div>
+        <div class="well"><button type="button" class="lbl" data-act="clr">CLR</button></div>
+        <div class="well"><button type="button" data-k="0">0</button></div>
+        <div class="well"><button type="button" class="lbl" data-act="go">ENTER</button></div>
+      </section>
+    </div>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
