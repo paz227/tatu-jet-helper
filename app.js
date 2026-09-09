@@ -92,8 +92,8 @@ function compute(fromEnter) {
   const band = bandFor(alt);
   const far = rng >= 25;
   const vals = { N: TABLE.N[band], OR: TABLE.OR[band], RN: TABLE.RN[band], AR: TABLE.AR[band], SW: TABLE.SW[band] };
-  vals.AR3 = vals.AR + 3;
-  const boldSet = far ? new Set(["AR3", "N", "OR", "SW"]) : new Set(["AR3", "RN", "AR", "SW"]);
+  vals.AR6 = vals.AR + 6;
+  const boldSet = far ? new Set(["AR6", "N", "OR", "SW"]) : new Set(["AR6", "RN", "AR", "SW"]);
   el.results.classList.remove("empty");
   el.leftHdg.textContent = padHdg(left);
   el.rightHdg.textContent = padHdg(right);
